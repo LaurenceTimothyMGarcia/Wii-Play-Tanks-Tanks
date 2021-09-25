@@ -1,19 +1,20 @@
 Each level is (for now) 22 tiles wide and 16 tiles vertically
 levels are represented as such in .level files, where each row is separated by a line break
-each tile is 5 characters long to define it
+each tile is 2 characters long to define it
 
-there must be 1 player tank and one enemy tank, of any type, for a valid level
-for a level to be multiplayer-compatible, there needs to be the cooresponding multiplayer tanks
+Level Name
+Level Mode (Singleplayer, MultiplayerCoOp, or MultiplayerVersus)
+Tiles
 
 Tile Name Guide
-grond = ground
-hole0 = hole, 0 is for keeping form
-wallx = wall, height of x
-dwalx = destructible wall, height of x
-plrtk = singleplayer tank, only 1
-mptkx = multiplayer tank, x = 0 for first player, 1 for second
-enmyx = enemy tank, type x
-	0 = gold
+00 = ground
+-1 = hole
+1x = wall, height of x
+2x = destructible wall, height of x
+sp = singleplayer tank, only 1
+mx = multiplayer tank, x = 0 for first player, 1 for second
+ex = enemy tank, type x
+	0 = brown
 	1 = grey
 	2 = turq
 	3 = yellow
