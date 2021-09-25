@@ -11,13 +11,7 @@ public class LevelReader : MonoBehaviour
     public string mode;
     public string levelData;
     public GameObject wall;
-    public GameObject wallTall;
-    public GameObject wallTaller;
-    public GameObject wallTallest;
     public GameObject desWall;
-    public GameObject desWallTall;
-    public GameObject desWallTaller;
-    public GameObject desWallTallest;
     public GameObject hole;
     public GameObject spTank;
     public GameObject mpTankP1;
@@ -56,129 +50,150 @@ public class LevelReader : MonoBehaviour
             for (int j = 0; j < 44; j += 2) //change x axis
             {
                 currentTile = levelData.Substring(j + (44*i), 2); //get tile
-                switch(currentTile)
+                if (currentTile.Substring(0, 1).Equals("1"))
                 {
-                    case "00": //Draw nothing
-                        break;
-                    case "-1":
-                        break;
-                    case "11":
-                        Instantiate(wall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "12":
-                        Instantiate(wallTall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "13":
-                        Instantiate(wallTaller, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "14":
-                        Instantiate(wallTallest, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "21":
-                        Instantiate(desWall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "22":
-                        Instantiate(desWallTall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "23":
-                        Instantiate(desWallTaller, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "24":
-                        Instantiate(desWallTallest, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
-                        break;
-                    case "sp":
-                        if (!mode.Equals("Singleplayer")) break; //Only in Singleplayer
-                        else
-                        {
-                            Instantiate(spTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                    int currentTileInt = int.Parse(currentTile.Substring(1)); //If it's a wall, get the height value
+                    switch (currentTileInt)
+                    {
+                        case 1:
+                            Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "m0":
-                        if (mode.Equals("Singleplayer")) break; //Only in Multiplayer
-                        else
-                        {
-                            Instantiate(mpTankP1, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case 2:
+                            Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "m1":
-                        if (mode.Equals("Singleplayer")) break; //Ditto
-                        else
-                        {
-                            Instantiate(mpTankP2, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case 3:
+                            Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "e0":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(brownTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case 4:
+                            Instantiate(wall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "e1":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(greyTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        default:
                             break;
-                        }
-                    case "e2":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(turqTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                    }
+                }
+                else if (currentTile.Substring(0, 1).Equals("2")) //Ditto for destructable walls
+                {
+                    int currentTileInt = int.Parse(currentTile.Substring(1));
+                    switch (currentTileInt)
+                    {
+                        case 1:
+                            Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "e3":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(yellowTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case 2:
+                            Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "e4":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(tealTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case 3:
+                            Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "e5":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(greenTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case 4:
+                            Instantiate(desWall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
                             break;
-                        }
-                    case "e6":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(purpTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        default:
                             break;
-                        }
-                    case "e7":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(whiteTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                    }
+                }
+                else
+                {
+                    switch (currentTile) //Otherwise, fallback to string-based switch statement
+                    {
+                        case "00": //Draw nothing
                             break;
-                        }
-                    case "e8":
-                        if (mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(blackTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case "-1":
                             break;
-                        }
-                    case "e9":
-                        if(mode.Equals("MultiplayerVersus")) break;
-                        else
-                        {
-                            Instantiate(thomasTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                        case "sp":
+                            if (!mode.Equals("Singleplayer")) break; //Only in Singleplayer
+                            else
+                            {
+                                Instantiate(spTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "m0":
+                            if (mode.Equals("Singleplayer")) break; //Only in Multiplayer
+                            else
+                            {
+                                Instantiate(mpTankP1, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "m1":
+                            if (mode.Equals("Singleplayer")) break; //Ditto
+                            else
+                            {
+                                Instantiate(mpTankP2, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e0":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(brownTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e1":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(greyTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e2":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(turqTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e3":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(yellowTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e4":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(tealTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e5":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(greenTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e6":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(purpTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e7":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(whiteTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e8":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(blackTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        case "e9":
+                            if (mode.Equals("MultiplayerVersus")) break;
+                            else
+                            {
+                                Instantiate(thomasTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                break;
+                            }
+                        default: //Malformed names and other nonsense is ignored
                             break;
-                        }
-                    default: //Malformed names and other nonsense is ignored
-                        break;
+                    }
                 }
                 GetComponent<Transform>().position += Vector3.right; //Next tile
             }
