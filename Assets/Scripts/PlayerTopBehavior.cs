@@ -6,7 +6,7 @@ public class PlayerTopBehavior : MonoBehaviour
 {
     public GameObject firePoint;
     public GameObject bullet;
-
+    //jjj
     public float fireRate;
     private float nextFireTime;
     public int bulletLimit;
