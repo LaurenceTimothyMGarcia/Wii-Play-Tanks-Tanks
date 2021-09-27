@@ -10,6 +10,10 @@ public class LevelReader : MonoBehaviour
     public string levelName;
     public string mode;
     public string levelData;
+
+    public Vector3 startTopLeft;
+    public Vector2 levelSize;
+
     public GameObject wall;
     public GameObject desWall;
     public GameObject hole;
@@ -34,22 +38,26 @@ public class LevelReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //BuildLevel(levelPath);
+        BuildLevel(levelPath);
     }
 
     public void BuildLevel(string path) //Uses indirect path in directory to get level
     {
         levelReader = new StreamReader(path);
-        Vector3 startPosition = new Vector3(-10, 0, 19); //Top left of the board
-        GetComponent<Transform>().position = startPosition; //Put "pen" to start
+        GetComponent<Transform>().position = startTopLeft; //Put "pen" to start
         levelName = levelReader.ReadLine(); //Get name of level for displaying
-        mode = levelReader.ReadLine();
-        levelData = levelReader.ReadLine();
-        for (int i = 0; i < 16; i++) //change y axis
+        mode = levelReader.ReadLine(); //Get mode (Singleplayer, Multiplayer Co-Op, Multiplayer Versus)
+        levelSize.x = int.Parse(levelReader.ReadLine()); //Get level width
+        int width = (int)levelSize.x*2; //Doubled for tile size of 2 chars
+        levelSize.y = int.Parse(levelReader.ReadLine()); //Get level height
+        int height = (int)levelSize.y; //Saved as height for clarity
+
+        levelData = levelReader.ReadLine(); //Finally, get level data
+        for (int i = 0; i < height; i++) //change y axis
         {
-            for (int j = 0; j < 44; j += 2) //change x axis
+            for (int j = 0; j < width; j += 2) //change x axis
             {
-                currentTile = levelData.Substring(j + (44*i), 2); //get tile
+                currentTile = levelData.Substring(j + (width*i), 2); //get tile
                 if (currentTile.Substring(0, 1).Equals("1"))
                 {
                     int currentTileInt = int.Parse(currentTile.Substring(1)); //If it's a wall, get the height value
