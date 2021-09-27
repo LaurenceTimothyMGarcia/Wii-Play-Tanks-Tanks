@@ -9,11 +9,9 @@ public class LevelReader : MonoBehaviour
     public string levelPath;
     public string levelName;
     public string mode;
-    public string levelData;
-
     public Vector3 startTopLeft;
     public Vector2 levelSize;
-
+    public string levelData;
     public GameObject wall;
     public GameObject desWall;
     public GameObject hole;
@@ -78,7 +76,7 @@ public class LevelReader : MonoBehaviour
             Working = false;
         }
         if (levelData.Length != width * height) Working = false; //If the string isn't the same length as the product of the width and height, don't read.
-        if (!mode.Equals("Singleplayer") || !mode.Equals("MultiplayerCoOp") || !mode.Equals("MultiplayerVersus")) Working = false; //If the mode is not supported, don't read.
+        if (!mode.Equals("Singleplayer") && !mode.Equals("MultiplayerCoOp") && !mode.Equals("MultiplayerVersus")) Working = false; //If the mode is not supported, don't read.
 
         if (Working)
         {
