@@ -16,9 +16,9 @@ public class LevelModifier : MonoBehaviour
     public void MakeLevel(string pathFolder, string fileName, string levelName, string Mode, int width, int height, string levelData) {
         string trueFilePath = string.Concat(pathFolder, string.Concat(fileName, ".level")); //get the whole file path together
         if (File.Exists(trueFilePath))
-        {
-            File.Copy(trueFilePath, string.Concat(trueFilePath, "old"));
-            File.Delete(trueFilePath);
+        { 
+           File.Copy(trueFilePath, string.Concat(trueFilePath, "old")); //Save the previous version
+           File.Delete(trueFilePath);
         }
         levelWriter = new StreamWriter(trueFilePath); //Opens the new file (or creates it if nonexistent?)
         levelWriter.WriteLine(levelName);
