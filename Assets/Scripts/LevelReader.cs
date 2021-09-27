@@ -88,47 +88,15 @@ public class LevelReader : MonoBehaviour
                 for (int j = 0; j < width; j += 2) //change x axis
                 {
                     currentTile = levelData.Substring(j + (width * i), 2); //get tile
-                    if (currentTile.Substring(0, 1).Equals("1"))
+                    if (currentTile.Substring(0, 1).Equals("1")) //If it's a wall
                     {
-                        int currentTileInt = int.Parse(currentTile.Substring(1)); //If it's a wall, get the height value
-                        switch (currentTileInt)
-                        {
-                            case 1:
-                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            case 2:
-                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            case 3:
-                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            case 4:
-                                Instantiate(wall, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            default:
-                                break;
-                        }
+                        int currentTileInt = int.Parse(currentTile.Substring(1)); //get the height value
+                        Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (currentTileInt - (float)4) / 2, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                     }
                     else if (currentTile.Substring(0, 1).Equals("2")) //Ditto for destructable walls
                     {
                         int currentTileInt = int.Parse(currentTile.Substring(1));
-                        switch (currentTileInt)
-                        {
-                            case 1:
-                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            case 2:
-                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            case 3:
-                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            case 4:
-                                Instantiate(desWall, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
-                                break;
-                            default:
-                                break;
-                        }
+                        Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (currentTileInt - (float)4) / 2, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                     }
                     else if (currentTile.Substring(0, 1).Equals("e") && !mode.Equals("MultiplayerVersus")) //Ditto for enemys
                     {
