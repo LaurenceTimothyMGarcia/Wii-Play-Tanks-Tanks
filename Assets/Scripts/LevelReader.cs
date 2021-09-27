@@ -37,6 +37,7 @@ public class LevelReader : MonoBehaviour
     void Start()
     {
         BuildLevel(levelPath);
+        //ClearLevel();
     }
 
     public void BuildLevel(string path) //Uses path in directory from Assets to get level
@@ -80,6 +81,8 @@ public class LevelReader : MonoBehaviour
 
         if (Working)
         {
+            GameObject levelTileHolder = GameObject.Find("TileHolder");
+
             for (int i = 0; i < height; i++) //change y axis
             {
                 for (int j = 0; j < width; j += 2) //change x axis
@@ -91,16 +94,16 @@ public class LevelReader : MonoBehaviour
                         switch (currentTileInt)
                         {
                             case 1:
-                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation);
+                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 2:
-                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation);
+                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 3:
-                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation);
+                                Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 4:
-                                Instantiate(wall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(wall, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             default:
                                 break;
@@ -112,55 +115,55 @@ public class LevelReader : MonoBehaviour
                         switch (currentTileInt)
                         {
                             case 1:
-                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation);
+                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-1.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 2:
-                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation);
+                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, -1, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 3:
-                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation);
+                                Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (float)-0.5, 0), GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 4:
-                                Instantiate(desWall, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(desWall, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             default:
                                 break;
                         }
                     }
-                    else if (currentTile.Substring(0, 1).Equals("e") && mode.Equals("MultiplayerVersus")) //Ditto for enemys
+                    else if (currentTile.Substring(0, 1).Equals("e") && !mode.Equals("MultiplayerVersus")) //Ditto for enemys
                     {
                         int currentTileInt = int.Parse(currentTile.Substring(1));
                         switch (currentTileInt)
                         {
                             case 0:
-                                Instantiate(brownTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(brownTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 1:
-                                Instantiate(greyTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(greyTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 2:
-                                Instantiate(turqTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(turqTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 3:
-                                Instantiate(yellowTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(yellowTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 4:
-                                Instantiate(tealTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(tealTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 5:
-                                Instantiate(greenTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(greenTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 6:
-                                Instantiate(purpTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(purpTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 7:
-                                Instantiate(whiteTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(whiteTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 8:
-                                Instantiate(blackTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(blackTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 9:
-                                Instantiate(thomasTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                Instantiate(thomasTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             default:
                                 break;
@@ -173,26 +176,27 @@ public class LevelReader : MonoBehaviour
                             case "00": //Draw nothing
                                 break;
                             case "-1":
+                                Instantiate(hole, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case "sp":
                                 if (!mode.Equals("Singleplayer")) break; //Only in Singleplayer
                                 else
                                 {
-                                    Instantiate(spTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                    Instantiate(spTank, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                     break;
                                 }
                             case "m0":
                                 if (mode.Equals("Singleplayer")) break; //Only in Multiplayer
                                 else
                                 {
-                                    Instantiate(mpTankP1, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                    Instantiate(mpTankP1, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                     break;
                                 }
                             case "m1":
                                 if (mode.Equals("Singleplayer")) break; //Ditto
                                 else
                                 {
-                                    Instantiate(mpTankP2, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+                                    Instantiate(mpTankP2, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                     break;
                                 }
                             default: //Malformed names and other nonsense is ignored
@@ -211,5 +215,15 @@ public class LevelReader : MonoBehaviour
         }
         //GetComponent<Transform>().position = new Vector3(-10, 0, 19); //Reset pen head
         levelReader.Close(); //Close levelReader
+        levelReader.Dispose(); //Free up the space as well
+    }
+    
+    public void ClearLevel() //Clear tileset of level
+    {
+        GameObject levelTileHolder = GameObject.Find("TileHolder");
+        foreach (Transform child in levelTileHolder.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
 }

@@ -252,9 +252,9 @@ MonoBehaviour:
   levelPath: Assets/Levels/TestLevel.level
   levelName: 
   mode: 
-  levelData: 
   startTopLeft: {x: -10, y: 0, z: 19}
   levelSize: {x: 0, y: 0}
+  levelData: 
   wall: {fileID: 509452131}
   desWall: {fileID: 1424268914}
   hole: {fileID: 1713606983}
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315757905}
   m_Layer: 0
-  m_Name: LevelFrame(Deleter?)
+  m_Name: TileHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
