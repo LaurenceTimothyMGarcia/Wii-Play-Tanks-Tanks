@@ -178,5 +178,6 @@ public class LevelReader : MonoBehaviour
             GetComponent<Transform>().position += Vector3.back;
         }
         //GetComponent<Transform>().position = new Vector3(-10, 0, 19); //Reset pen head
+        levelReader.Close();
     }
 }
