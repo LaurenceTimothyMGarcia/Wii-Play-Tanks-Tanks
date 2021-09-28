@@ -181,7 +181,7 @@ public class LevelReader : MonoBehaviour
         {
             Debug.LogError("Level data does not match in terms of length.");
         }
-        //GetComponent<Transform>().position = new Vector3(-10, 0, 19); //Reset pen head
+        GetComponent<Transform>().position = startTopLeft; //Reset pen head
         levelReader.Close(); //Close levelReader
         levelReader.Dispose(); //Free up the space as well
     }
