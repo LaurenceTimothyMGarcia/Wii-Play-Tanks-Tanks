@@ -11,20 +11,29 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bulletTransform = transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
         
         
         //Destroy(gameObject, 3f);
     }
 
-    /*void OnCollisionEnter(Collision coll)
+    void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Block"))
+        if (coll.gameObject.CompareTag("Block") && ricochets > 0)
         {
-            Vector3 wallNormal = coll.contacts[0].normal;
-            bulletTransform = Vector3.Reflect(bulletTransform.position, wallNormal).normalize;
+            //Destroy(gameObject, 0f);
 
-            bulletTransform.velocity = bulletTransform * bulletSpeed;
+            //Vector3 wallNormal = coll.contacts[0].normal;
+            //bulletTransform = Vector3.Reflect(bulletTransform.position, wallNormal).normalize;
+
+            //bulletTransform.velocity = bulletTransform * bulletSpeed;
+
+            ricochets--;
         }
-    }*/
+
+        if (coll.gameObject.CompareTag("Block") && ricochets <= 0)
+        {
+            Destroy(gameObject, 0f);
+        }
+    }
 }
