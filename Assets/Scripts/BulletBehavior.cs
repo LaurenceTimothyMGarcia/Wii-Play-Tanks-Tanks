@@ -6,7 +6,8 @@ public class BulletBehavior : MonoBehaviour
 {
     public float bulletSpeed;
     public int ricochets;
-    public Transform bulletTransform;
+    Vector3 movementDir;
+    public Rigidbody rb;
 
     // Update is called once per frame
     void Update()
@@ -21,12 +22,10 @@ public class BulletBehavior : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Block") && ricochets > 0)
         {
-            //Destroy(gameObject, 0f);
+            Vector3 wallNormal = coll.contacts[0].normal;
+            movementDir = Vector3.Reflect(rb.velocity, wallNormal).normalized;
 
-            //Vector3 wallNormal = coll.contacts[0].normal;
-            //bulletTransform = Vector3.Reflect(bulletTransform.position, wallNormal).normalize;
-
-            //bulletTransform.velocity = bulletTransform * bulletSpeed;
+            rb.velocity = movementDir * bulletSpeed;
 
             ricochets--;
         }
