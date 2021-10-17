@@ -30,7 +30,7 @@ public class PlayerTopBehavior : MonoBehaviour
         //SHOOTING
         int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length; //counts number of bullets on screen
 
-        if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime) //&& numBullets < bulletLimit)
+        if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && numBullets <= 5) //&& numBullets < bulletLimit)
         {
             nextFireTime = Time.time + 1f/fireRate;
             Shoot();
