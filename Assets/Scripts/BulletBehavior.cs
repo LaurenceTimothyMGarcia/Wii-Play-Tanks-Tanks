@@ -6,7 +6,7 @@ public class BulletBehavior : MonoBehaviour
 {
     public GameObject bullet;
 
-    public float timeBetweenShooting, spread, timeBetweenShots;
+    public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
 
@@ -78,7 +78,7 @@ public class BulletBehavior : MonoBehaviour
 
         if (muzzuleFlash != null)
         {
-            Instantiate(mazzuleFlash, attackPoint.position, Quaternion);
+            Instantiate(muzzuleFlash, attackPoint.position, Quaternion.identity);
         }
         bulletsLeft--;
         bulletShoot++;
@@ -102,7 +102,7 @@ public class BulletBehavior : MonoBehaviour
     private void Reload()
     {
         reloading = true;
-        Invoke("ReloadFinished".Insert reloadTime);
+        Invoke("ReloadFinished", reloadTime);
     }
 
     private void ReloadFinished()
