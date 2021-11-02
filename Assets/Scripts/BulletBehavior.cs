@@ -7,18 +7,10 @@ public class BulletBehavior : MonoBehaviour
     public int ricochets;
     Vector3 lastVelocity;
     Vector3 movementDir;
-    public Rigidbody rb;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector3(1f, 0, 1f);
-
         transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
         
         Ray ray = new Ray(transform.position, transform.forward);
@@ -45,8 +37,6 @@ public class BulletBehavior : MonoBehaviour
 
             bulletSpeed = lastVelocity.magnitude;
             movementDir = Vector3.Reflect(lastVelocity.normalized, coll.contacts[0].normal);
-
-            rb.velocity = movementDir * Mathf.Max(bulletSpeed, 1f);
 
             //Vector3 wallNormal = coll.contacts[0].normal;
             //movementDir = Vector3.Reflect(rb.velocity, wallNormal).normalized;
