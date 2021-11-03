@@ -4,7 +4,9 @@ each tile is 2 characters long to define it
 
 Level Name
 Level Mode (Singleplayer, MultiplayerCoOp, or MultiplayerVersus)
-Tiles
+Width
+Height
+Tile Data
 
 Tile Name Guide
 00 = ground
