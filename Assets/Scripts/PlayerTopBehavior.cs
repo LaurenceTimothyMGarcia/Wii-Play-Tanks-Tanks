@@ -6,6 +6,7 @@ public class PlayerTopBehavior : MonoBehaviour
 {
     public GameObject firePoint;
     public GameObject bullet;
+    public GameObject bottomTank;
 
     public float fireRate;
     private float nextFireTime;
@@ -17,6 +18,10 @@ public class PlayerTopBehavior : MonoBehaviour
         Plane playerPlane = new Plane(Vector3.up, transform.position);
         Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
         float hitDist = 0.0f;
+
+        //Transform movement = transform.GetComponentInParent<Transform>;
+
+        Transform movement = bottomTank.transform;
 
         //ROTATION
         if(playerPlane.Raycast(ray, out hitDist))
