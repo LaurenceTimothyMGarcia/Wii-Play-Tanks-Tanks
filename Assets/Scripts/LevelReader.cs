@@ -98,16 +98,16 @@ public class LevelReader : MonoBehaviour
                         //Instantiate(wall, GetComponent<Transform>().position + new Vector3(0, (currentTileInt - (float)4) / 2, 0), GetComponent<Transform>().rotation, levelTileHolder.transform); OLD CODE BASED ON CHANGING HEIGHT
                         switch (currentTileInt)
                         {
-                            case 0:
+                            case 0: //Short wall
                                 Instantiate(wall1, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
-                            case 1:
+                            case 1: //Mid wall
                                 Instantiate(wall2, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
-                            case 2:
+                            case 2: //Tall wall
                                 Instantiate(wall3, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
-                            default:
+                            default: //Nonexistant wall
                                 break;
                         }
                     }
@@ -117,7 +117,7 @@ public class LevelReader : MonoBehaviour
                         //Instantiate(desWall, GetComponent<Transform>().position + new Vector3(0, (currentTileInt - (float)4) / 2, 0), GetComponent<Transform>().rotation, levelTileHolder.transform); OLD CODE BASED ON CHANGING HEIGHT
                         switch (currentTileInt)
                         {
-                            case 0:
+                            case 0: //Short Break
                                 Instantiate(desWall1, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 1:
