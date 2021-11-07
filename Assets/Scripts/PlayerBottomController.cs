@@ -14,6 +14,12 @@ public class PlayerBottomController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+        if (horizontalInput == 0 && verticalInput == 0)
+        {
+            Vector3 noMovement = new Vector3(0,0,0);
+            transform.Translate(noMovement, Space.Self);
+        }
+
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         movementDirection.Normalize();
 
