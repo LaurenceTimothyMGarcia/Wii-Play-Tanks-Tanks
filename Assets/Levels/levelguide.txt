@@ -11,8 +11,16 @@ Tile Data
 Tile Name Guide
 00 = ground
 -1 = hole
-1x = wall, height of x
-2x = destructible wall, height of x
+1x = wall, type x
+	0 = small
+	1 = medium
+	2 = tall
+	3 = corner up left
+	4 = corner up right
+	5 = corner down left
+	6 = corner down right
+2x = destructible wall, type x
+	0 = normal
 sp = singleplayer tank, only 1
 mx = multiplayer tank, x = 0 for first player, 1 for second
 ex = enemy tank, type x
