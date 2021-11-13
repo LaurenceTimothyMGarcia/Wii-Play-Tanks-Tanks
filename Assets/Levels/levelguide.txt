@@ -19,6 +19,7 @@ Tile Name Guide
 	4 = corner up right
 	5 = corner down left
 	6 = corner down right
+NOTE: Corner refers to the point at which the x and y of the right triangle meet. Example: Corner down right = x goes into the negative, & y the positive
 2x = destructible wall, type x
 	0 = normal
 sp = singleplayer tank, only 1

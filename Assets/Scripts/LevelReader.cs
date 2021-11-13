@@ -12,12 +12,16 @@ public class LevelReader : MonoBehaviour
     public Vector3 startTopLeft;
     public Vector2 levelSize;
     public string levelData;
-    public GameObject wall1;
-    public GameObject wall2;
-    public GameObject wall3;
+    public GameObject wallSmall;
+    public GameObject wallMedium;
+    public GameObject wallTall;
+    public GameObject wallcornerUL;
+    public GameObject wallcornerUR;
+    public GameObject wallcornerBL;
+    public GameObject wallcornerBR;
     public GameObject desWall1;
-    public GameObject desWall2;
-    public GameObject desWall3;
+    public GameObject desWall2_UNUSED;
+    public GameObject desWall3_UNUSED;
     public GameObject hole;
     public GameObject spTank;
     public GameObject mpTankP1;
@@ -99,13 +103,25 @@ public class LevelReader : MonoBehaviour
                         switch (currentTileInt)
                         {
                             case 0: //Short wall
-                                Instantiate(wall1, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                Instantiate(wallSmall, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 1: //Mid wall
-                                Instantiate(wall2, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                Instantiate(wallMedium, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 2: //Tall wall
-                                Instantiate(wall3, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                Instantiate(wallTall, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                break;
+                            case 3: //corner up left wall
+                                Instantiate(wallcornerUL, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                break;
+                            case 4: //corner up left wall
+                                Instantiate(wallcornerUR, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                break;
+                            case 5: //corner up left wall
+                                Instantiate(wallcornerBL, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                break;
+                            case 6: //corner up left wall
+                                Instantiate(wallcornerBR, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             default: //Nonexistant wall
                                 break;
@@ -121,10 +137,10 @@ public class LevelReader : MonoBehaviour
                                 Instantiate(desWall1, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 1:
-                                Instantiate(desWall2, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                Instantiate(desWall2_UNUSED, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             case 2:
-                                Instantiate(desWall3, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
+                                Instantiate(desWall3_UNUSED, GetComponent<Transform>().position, GetComponent<Transform>().rotation, levelTileHolder.transform);
                                 break;
                             default:
                                 break;
