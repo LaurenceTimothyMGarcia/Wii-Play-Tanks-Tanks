@@ -24,17 +24,27 @@ public class BulletBehavior : MonoBehaviour
             float rot = 90 - Mathf.Atan2(reflect.z, reflect.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, rot, 0);
             ricochets--;
+            Debug.Log("Hit");
         }
 
         //Destroy(gameObject, 3f);
     }
 
-    void OnCollisionEnter(Collision coll)
+    //This entire on collision portion does not work
+    //Bullets still ricochets without it
+    /*void OnCollisionEnter(Collision coll)
     {
+        if (coll.gameObject.CompareTag("Breakable"))
+        {
+            Debug.Log("Hit");
+            Destroy(coll.gameObject, 0f);
+            Destroy(gameObject, 0f);
+        }
+
         if (coll.gameObject.CompareTag("Block") && ricochets > 0)
         {
             Debug.Log(ricochets);
-
+            
             bulletSpeed = lastVelocity.magnitude;
             movementDir = Vector3.Reflect(lastVelocity.normalized, coll.contacts[0].normal);
 
@@ -50,5 +60,5 @@ public class BulletBehavior : MonoBehaviour
         {
             Destroy(gameObject, 0f);
         }
-    }
+    }*/
 }
