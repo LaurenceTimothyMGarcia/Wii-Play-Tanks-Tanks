@@ -75,6 +75,8 @@ public class BulletBehavior : MonoBehaviour
 
         //spawed bullets are stored here
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
+        
+        currentBullet.transform.forward = direction.normalized;
 
         if (muzzuleFlash != null)
         {
