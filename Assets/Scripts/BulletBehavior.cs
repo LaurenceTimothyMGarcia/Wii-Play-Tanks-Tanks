@@ -17,6 +17,11 @@ public class BulletBehavior : MonoBehaviour
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit, Time.deltaTime * bulletSpeed + .05f)) {
+            if(hit.collider.gameObject.CompareTag("Breakable"))
+            {
+                Destroy(hit.collider.gameObject);
+                ricochets = 0;
+            }
             if(ricochets == 0) {
                 Destroy(gameObject);
             }
@@ -24,7 +29,6 @@ public class BulletBehavior : MonoBehaviour
             float rot = 90 - Mathf.Atan2(reflect.z, reflect.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, rot, 0);
             ricochets--;
-            Debug.Log("Hit");
         }
 
         //Destroy(gameObject, 3f);
