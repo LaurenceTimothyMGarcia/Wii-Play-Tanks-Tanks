@@ -95,7 +95,7 @@ public class LevelReader : MonoBehaviour
         if (levelData.Length != width * height) Working = false; //If the string isn't the same length as the product of the width and height, don't read.
         if (!mode.Equals("Singleplayer") && !mode.Equals("MultiplayerCoOp") && !mode.Equals("MultiplayerVersus")) Working = false; //If the mode is not supported, don't read.
         
-        try {
+        try { //Just in case, try to read again, for a custom camera position
             cameraX = float.Parse(levelReader.ReadLine());
             cameraY = float.Parse(levelReader.ReadLine());
             cameraZ = float.Parse(levelReader.ReadLine());
@@ -104,9 +104,10 @@ public class LevelReader : MonoBehaviour
         catch{
             Debug.LogError("Failed to read camera data.");
         }
-        try {
-            cameraPosition.transform.position = new Vector3(cameraX, cameraY, cameraZ); //Just in case, try to read again, for a custom camera position
-            cameraSize.orthographicSize = float.Parse(levelReader.ReadLine()); //Also get size of camera
+        Vector3 newCamPos = new Vector3(cameraX, cameraY, cameraZ);
+        try { //If data is found, set the camera accordingly
+            cameraPosition.transform.position = newCamPos;
+            cameraSize.orthographicSize = cameraS; //Also set size of camera
         }
         catch {
             Debug.LogError("Failed to modify camera.");

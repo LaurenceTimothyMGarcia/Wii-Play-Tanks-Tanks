@@ -6,7 +6,11 @@ Level Name
 Level Mode (Singleplayer, MultiplayerCoOp, or MultiplayerVersus)
 Width
 Height
-Tile Data
+Tile Data (refer to tile name guide for specific tiles)
+Custom Camera X Position
+Custom Camera Y Position
+Custom Camera Z Position
+Custom Camera Size
 
 Tile Name Guide
 00 = ground
