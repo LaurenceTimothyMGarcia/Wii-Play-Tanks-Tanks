@@ -12,6 +12,14 @@ public class LevelReader : MonoBehaviour
     public Vector3 startTopLeft;
     public Vector2 levelSize;
     public string levelData;
+    public GameObject cameraPosition;
+    public Camera cameraSize;
+
+    public float cameraX = 0.53f;
+    public float cameraY = 15.1f;
+    public float cameraZ = -2.22f;
+    public float cameraS = 8.43f;
+
     public GameObject wallSmall;
     public GameObject wallMedium;
     public GameObject wallTall;
@@ -86,6 +94,24 @@ public class LevelReader : MonoBehaviour
         }
         if (levelData.Length != width * height) Working = false; //If the string isn't the same length as the product of the width and height, don't read.
         if (!mode.Equals("Singleplayer") && !mode.Equals("MultiplayerCoOp") && !mode.Equals("MultiplayerVersus")) Working = false; //If the mode is not supported, don't read.
+        
+        try { //Just in case, try to read again, for a custom camera position
+            cameraX = float.Parse(levelReader.ReadLine());
+            cameraY = float.Parse(levelReader.ReadLine());
+            cameraZ = float.Parse(levelReader.ReadLine());
+            cameraS = float.Parse(levelReader.ReadLine());
+        }
+        catch{
+            Debug.LogError("Failed to read camera data.");
+        }
+        Vector3 newCamPos = new Vector3(cameraX, cameraY, cameraZ);
+        try { //If data is found, set the camera accordingly
+            cameraPosition.transform.position = newCamPos;
+            cameraSize.orthographicSize = cameraS; //Also set size of camera
+        }
+        catch {
+            Debug.LogError("Failed to modify camera.");
+        }
 
         if (Working)
         {
@@ -230,6 +256,7 @@ public class LevelReader : MonoBehaviour
             Debug.LogError("Level data does not match in terms of length.");
         }
         GetComponent<Transform>().position = startTopLeft; //Reset pen head
+        
         levelReader.Close(); //Close levelReader
         levelReader.Dispose(); //Free up the space as well
     }

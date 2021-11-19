@@ -256,6 +256,12 @@ MonoBehaviour:
   startTopLeft: {x: -10, y: 0, z: 19}
   levelSize: {x: 0, y: 0}
   levelData: 
+  cameraPosition: {fileID: 110391706}
+  cameraSize: {fileID: 110391708}
+  cameraX: 0.53
+  cameraY: 15.1
+  cameraZ: -2.22
+  cameraS: 8.43
   wallSmall: {fileID: 3061039969654028375, guid: dac281d52f7aa9a4cb5b36f5b00aae28, type: 3}
   wallMedium: {fileID: 8198910540157207523, guid: 9a02dd6bfc1752144a992d73e0101878, type: 3}
   wallTall: {fileID: 8788050959801450210, guid: 45e298c1c034e5d49a019ddc6edc7e2a, type: 3}
