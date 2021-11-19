@@ -7,6 +7,9 @@ TagManager:
   - Bullet
   - Block
   - Enemy
+  - PatrolPoint
+  - whatIsGround
+  - whatIsPlayer
   layers:
   - Default
   - TransparentFX
