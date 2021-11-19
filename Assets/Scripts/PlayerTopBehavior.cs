@@ -39,6 +39,7 @@ public class PlayerTopBehavior : MonoBehaviour
         {
             nextFireTime = Time.time + 1f/fireRate;
             Shoot();
+            FindObjectOfType<AudioManager>().Play("TankShoot");
         }
     }
 
