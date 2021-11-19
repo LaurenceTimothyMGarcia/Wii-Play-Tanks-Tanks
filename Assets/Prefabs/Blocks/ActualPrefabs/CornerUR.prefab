@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8833339464067155054}
   - component: {fileID: 6733624957092851876}
   - component: {fileID: 5382700513653156898}
+  - component: {fileID: 8330133578388819669}
   m_Layer: 0
   m_Name: CornerUR
   m_TagString: Block
@@ -96,3 +97,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8691780276856062721, guid: 3a50abf11e498004583f32fd46f11e56, type: 3}
+--- !u!208 &8330133578388819669
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076216799827513713}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.98200005, y: 1, z: 0.98100007}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.020000001, y: 0, z: 0.021000002}
+  m_TimeToStationary: 0.5

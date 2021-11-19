@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8430200801697777336}
   - component: {fileID: 8430200801697777339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankPlayerSingle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,10 +52,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8430200801697777336}
     m_Modifications:
+    - target: {fileID: 6049223749214715275, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049223749279538920, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6049223749279538927, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
       propertyPath: bottomTank
       value: 
       objectReference: {fileID: 2813973537612333902}
+    - target: {fileID: 6859616799675859145, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6859616800337644378, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -115,6 +127,10 @@ PrefabInstance:
     - target: {fileID: 6859616800337644379, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
       propertyPath: m_Name
       value: TankHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859616800337644379, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01d380f8a906e584ca00b41da081de0c, type: 3}
