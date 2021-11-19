@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2864849196639470017}
   - component: {fileID: 2864849196639470020}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TankEnemyBlack
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

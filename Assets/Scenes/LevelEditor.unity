@@ -1064,6 +1064,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: TankMovement
+    clip: {fileID: 8300000, guid: 525a822a8b421744891244f035c532e4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1960595010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e969e17fa4d00c649a1c69b3204cd137, type: 3}
