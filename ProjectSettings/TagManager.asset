@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Block
   - Breakable
+  - Enemy
   layers:
   - Default
   - TransparentFX
