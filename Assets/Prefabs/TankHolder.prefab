@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 6859616799675859145}
   bullet: {fileID: 6279364289080440706, guid: 92db1d34a52f0eb4f8e2f78c4255ef85, type: 3}
+  bottomTank: {fileID: 0}
   fireRate: 5
 --- !u!65 &6049223749279538926
 BoxCollider:
@@ -277,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 6859616800337644379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_Children:
   - {fileID: 6393132761113789522}
   - {fileID: 6393132761053194033}
