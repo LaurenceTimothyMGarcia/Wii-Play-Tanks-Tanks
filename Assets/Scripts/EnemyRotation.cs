@@ -16,6 +16,7 @@ public class EnemyRotation : MonoBehaviour
       // Update is called once per frame
       void Update()
       {
-         transform.LookAt(player.position);
+         Vector3 targetPosition = new Vector3(player.position.x, this.transform.position.y, player.position.z);
+         transform.LookAt(targetPosition);
       }
 }
