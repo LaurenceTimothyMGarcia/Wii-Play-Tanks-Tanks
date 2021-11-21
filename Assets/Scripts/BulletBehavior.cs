@@ -25,6 +25,7 @@ public class BulletBehavior : MonoBehaviour
             }
             if(ricochets == 0) {
                 Destroy(gameObject);
+                return;
             }
             FindObjectOfType<AudioManager>().Play("BulletReflect");
             Vector3 reflect = Vector3.Reflect(ray.direction, hit.normal);

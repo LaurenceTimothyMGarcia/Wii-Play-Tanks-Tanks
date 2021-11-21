@@ -87,6 +87,7 @@ MonoBehaviour:
   bullet: {fileID: 6279364289080440706, guid: 92db1d34a52f0eb4f8e2f78c4255ef85, type: 3}
   fireRate: 1
   bulletLimit: 5
+  canMove: 1
 --- !u!1001 &1956170726147841453
 PrefabInstance:
   m_ObjectHideFlags: 0
