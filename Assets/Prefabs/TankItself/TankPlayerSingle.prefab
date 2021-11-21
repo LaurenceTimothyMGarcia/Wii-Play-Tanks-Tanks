@@ -98,7 +98,7 @@ MonoBehaviour:
   firePoint: {fileID: 3155994008829591052}
   bullet: {fileID: 6279364289080440706, guid: 92db1d34a52f0eb4f8e2f78c4255ef85, type: 3}
   bottomTank: {fileID: 2813973537612333902}
-  fireRate: 2
+  fireRate: 5
   bulletLimit: 10
 --- !u!1 &2813973537612333902
 GameObject:
