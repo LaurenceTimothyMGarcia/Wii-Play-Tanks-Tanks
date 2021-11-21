@@ -19,6 +19,11 @@ public class PlayerBottomController : MonoBehaviour
             Vector3 noMovement = new Vector3(0,0,0);
             transform.Translate(noMovement, Space.Self);
         }
+        else
+        {
+            //need to find right audio file first
+            //FindObjectOfType<AudioManager>().Play("TankMovement");
+        }
 
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         movementDirection.Normalize();
