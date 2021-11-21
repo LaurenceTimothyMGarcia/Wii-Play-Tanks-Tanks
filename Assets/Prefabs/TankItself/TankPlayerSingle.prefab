@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2011197241022330162}
   - component: {fileID: 4327328628203405816}
   - component: {fileID: 2813973537547542570}
+  - component: {fileID: 2813973537547542571}
+  - component: {fileID: 2813973537547542568}
   m_Layer: 6
   m_Name: TankHead
   m_TagString: Untagged
@@ -100,6 +102,32 @@ MonoBehaviour:
   bottomTank: {fileID: 2813973537612333902}
   fireRate: 5
   bulletLimit: 10
+--- !u!65 &2813973537547542571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813973537547542573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0955249, y: 0.9743066, z: 1.2377814}
+  m_Center: {x: 0, y: 0.48715335, z: 0.031990826}
+--- !u!65 &2813973537547542568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813973537547542573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6209594, y: 0.41190267, z: 1.3186703}
+  m_Center: {x: 0, y: 0.5574539, z: 1.3289185}
 --- !u!1 &2813973537612333902
 GameObject:
   m_ObjectHideFlags: 0

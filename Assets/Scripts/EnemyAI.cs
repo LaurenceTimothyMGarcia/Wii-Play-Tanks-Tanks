@@ -15,8 +15,6 @@ public class EnemyAI : MonoBehaviour
     private float nextFireTime;
     public int bulletLimit;
 
-    public bool canMove = true;
-
     Vector3 velocity = Vector3.zero;
 
     void Start()
@@ -28,11 +26,8 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)//checks if tanks can move or not
-        {
-            ChasePlayer();
-        }
-        
+        ChasePlayer();
+        //should create ray between player and enemy
         AttackPlayer();
     }
 
