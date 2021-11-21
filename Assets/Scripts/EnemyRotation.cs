@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyRotation : MonoBehaviour
 {
+   public Transform player;
    public GameObject firePoint;
    public GameObject bullet;
    public GameObject bottomTank;
@@ -12,13 +13,9 @@ public class EnemyRotation : MonoBehaviour
    public float fireRate;
    private float nextFireTime;
 
-    // Update is called once per frame
-    void Update()
-    {
-        Plane playerPlane = new Plane(Vector3.up, transform.position);
-        Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
-        float hitDist = 0.0f;
-
-        
-    }
+      // Update is called once per frame
+      void Update()
+      {
+         transform.LookAt(player);
+      }
 }

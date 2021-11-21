@@ -14,7 +14,7 @@ public class PlayerBottomController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if ((horizontalInput < 0.5 && horizontalInput > -0.5) && (verticalInput < 0.5 && verticalInput > -0.5))
+        /*if ((horizontalInput < 0.5 && horizontalInput > -0.5) && (verticalInput < 0.5 && verticalInput > -0.5))
         {
             Vector3 noMovement = new Vector3(0,0,0);
             transform.Translate(noMovement, Space.Self);
@@ -23,7 +23,7 @@ public class PlayerBottomController : MonoBehaviour
         {
             //need to find right audio file first
             //FindObjectOfType<AudioManager>().Play("TankMovement");
-        }
+        }*/
 
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         movementDirection.Normalize();

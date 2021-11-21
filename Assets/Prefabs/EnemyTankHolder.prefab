@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 4789105202366958733}
   - component: {fileID: 6446530952438050142}
   - component: {fileID: 6446530952438050141}
+  - component: {fileID: 960346247570080609}
   m_Layer: 7
   m_Name: TankHead
   m_TagString: Untagged
@@ -267,3 +268,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6209594, y: 0.41190267, z: 1.3186703}
   m_Center: {x: 0, y: 0.5574539, z: 1.3289185}
+--- !u!114 &960346247570080609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446530952438050136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec133b7e3d8e534d80ac2b28de06f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8430200801697777336, guid: 8d9b384f3613c5a44a0b41f62914ce5b, type: 3}
+  firePoint: {fileID: 6176621396944483193}
+  bullet: {fileID: 6279364289080440706, guid: 92db1d34a52f0eb4f8e2f78c4255ef85, type: 3}
+  bottomTank: {fileID: 6446530952373210683}
+  fireRate: 1
