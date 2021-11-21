@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
     public Transform Player;
     public NavMeshAgent enemy;
 
+
+
     void Awake()
     {
         Player = GameObject.FindWithTag("Player").transform;
@@ -17,7 +19,17 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemy.SetDestination(Player.position);
+        ChasePlayer();
         //should create ray between player and enemy
+    }
+
+    private void ChasePlayer()
+    {
+        enemy.SetDestination(Player.position);
+    }
+
+    private void AttackPlayer()
+    {
+        
     }
 }
