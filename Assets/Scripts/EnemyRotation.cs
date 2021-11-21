@@ -13,9 +13,14 @@ public class EnemyRotation : MonoBehaviour
    public float fireRate;
    private float nextFireTime;
 
+      void Start()
+      {
+         player = GameObject.FindWithTag("Player").transform;
+      }
+
       // Update is called once per frame
       void Update()
       {
-         transform.LookAt(player);
+         transform.LookAt(player.position);
       }
 }
