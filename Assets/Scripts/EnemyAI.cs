@@ -38,7 +38,8 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        enemy.SetDestination(Player.position);
+        try { enemy.SetDestination(Player.position); }
+        catch { }
         //Debug.Log(enemy.SetDestination(Player.position));
         transform.position = Vector3.SmoothDamp(transform.position, enemy.nextPosition, ref velocity, 0.1f);
     }

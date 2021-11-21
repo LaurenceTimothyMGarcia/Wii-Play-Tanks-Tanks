@@ -250,7 +250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35af2ac12b8a75348b1af9f7702cdd9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   levelPath: Assets/Levels/Level008.level
+=======
+  levelPath: Assets/Levels/Level001.level
+>>>>>>> 65f0532f1c11180403245f14240b7d8c77b5a94e
   levelName: 
   mode: 
   startTopLeft: {x: -10, y: 0, z: 19}

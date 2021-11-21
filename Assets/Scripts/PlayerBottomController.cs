@@ -7,6 +7,7 @@ public class PlayerBottomController : MonoBehaviour
     //Variables
     public float movementSpeed;
     public float rotationSpeed;
+    public GameObject mine;
 
     //functions
     void Update()
@@ -36,6 +37,11 @@ public class PlayerBottomController : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Instantiate(mine, transform.position, transform.rotation);
         }
     }
 }
