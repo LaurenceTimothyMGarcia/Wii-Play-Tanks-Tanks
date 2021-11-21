@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject bullet;
 
     public float fireRate;
-    private float nextFireTime = 5;
+    private float nextFireTime = 2;
     public int bulletLimit;
 
     public bool canMove = true;

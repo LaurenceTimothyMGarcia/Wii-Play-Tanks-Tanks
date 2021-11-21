@@ -85,7 +85,7 @@ MonoBehaviour:
   enemy: {fileID: 4890219390499479527}
   firePoint: {fileID: 6177193629587667168}
   bullet: {fileID: 6279364289080440706, guid: 92db1d34a52f0eb4f8e2f78c4255ef85, type: 3}
-  fireRate: 1
+  fireRate: 0.5
   bulletLimit: 5
   canMove: 1
 --- !u!1001 &3950062976830361
