@@ -39,7 +39,7 @@ public class PlayerBottomController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1))
         {
             Instantiate(mine, transform.position, transform.rotation);
         }
