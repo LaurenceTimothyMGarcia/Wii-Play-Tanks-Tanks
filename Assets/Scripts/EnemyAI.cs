@@ -8,6 +8,13 @@ public class EnemyAI : MonoBehaviour
     public Transform Player;
     public NavMeshAgent enemy;
 
+    public GameObject firePoint;
+    public GameObject bullet;
+
+    public float fireRate;
+    private float nextFireTime;
+    public int bulletLimit;
+
     Vector3 velocity = Vector3.zero;
 
     void Start()
@@ -21,6 +28,7 @@ public class EnemyAI : MonoBehaviour
     {
         ChasePlayer();
         //should create ray between player and enemy
+        AttackPlayer();
     }
 
     private void ChasePlayer()
@@ -32,6 +40,18 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
+        int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length;
 
+        if (Time.time >= nextFireTime && numBullets <= bulletLimit)
+        {
+            nextFireTime = Time.time + 1f/fireRate;
+            Shoot();
+            FindObjectOfType<AudioManager>().Play("TankShoot");
+        }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bullet.transform, firePoint.transform.position, firePoint.transform.rotation);
     }
 }

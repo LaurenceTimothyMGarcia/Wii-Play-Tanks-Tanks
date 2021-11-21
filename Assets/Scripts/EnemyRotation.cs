@@ -6,12 +6,7 @@ using UnityEngine.AI;
 public class EnemyRotation : MonoBehaviour
 {
    public Transform player;
-   public GameObject firePoint;
-   public GameObject bullet;
    public GameObject bottomTank;
-
-   public float fireRate;
-   private float nextFireTime;
 
       void Start()
       {
