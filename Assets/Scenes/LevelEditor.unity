@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43774444, g: 0.48563987, b: 0.56591654, a: 1}
+  m_IndirectSpecularColor: {r: 0.4377444, g: 0.48563945, b: 0.56591606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,7 +262,7 @@ MonoBehaviour:
   cameraY: 15.1
   cameraZ: -2.22
   cameraS: 8.43
-  wallSmall: {fileID: 3061039969654028375, guid: dac281d52f7aa9a4cb5b36f5b00aae28, type: 3}
+  wallSmall: {fileID: 2509263681499753663, guid: 8e6a22b65a9de2540bc82e89e8d49f72, type: 3}
   wallMedium: {fileID: 8198910540157207523, guid: 9a02dd6bfc1752144a992d73e0101878, type: 3}
   wallTall: {fileID: 8788050959801450210, guid: 45e298c1c034e5d49a019ddc6edc7e2a, type: 3}
   wallcornerUL: {fileID: 2143147925082782217, guid: ae5fa1b9c98311a4ebea2035768f5e58, type: 3}

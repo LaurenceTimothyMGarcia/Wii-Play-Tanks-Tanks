@@ -8,7 +8,18 @@ public class EnemyAI : MonoBehaviour
     public Transform Player;
     public NavMeshAgent enemy;
 
-    void Awake()
+    public GameObject firePoint;
+    public GameObject bullet;
+
+    public float fireRate;
+    private float nextFireTime = 1;
+    public int bulletLimit;
+
+    public bool canMove = true;
+
+    Vector3 velocity = Vector3.zero;
+
+    void Start()
     {
         Player = GameObject.FindWithTag("Player").transform;
         enemy = GetComponent<NavMeshAgent>();
@@ -17,7 +28,35 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (canMove)//checks if tanks can move or not
+        {
+            ChasePlayer();
+        }
+        
+        AttackPlayer();
+    }
+
+    private void ChasePlayer()
+    {
         enemy.SetDestination(Player.position);
-        //should create ray between player and enemy
+        //Debug.Log(enemy.SetDestination(Player.position));
+        transform.position = Vector3.SmoothDamp(transform.position, enemy.nextPosition, ref velocity, 0.1f);
+    }
+
+    private void AttackPlayer()
+    {
+        int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length;
+
+        if (Time.time >= nextFireTime && numBullets <= bulletLimit)
+        {
+            nextFireTime = Time.time + 1f/fireRate;
+            Shoot();
+            FindObjectOfType<AudioManager>().Play("TankShoot");
+        }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bullet.transform, firePoint.transform.position, firePoint.transform.rotation);
     }
 }

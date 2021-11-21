@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3346724774911013474}
   - component: {fileID: 160534950009444080}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BulletTwice
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 5
-  ricochets: 1
+  ricochets: 2
 --- !u!135 &3346724774911013474
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -81,8 +81,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8368da5a03bccae43accd1502b557491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 8430200801697777336, guid: 8d9b384f3613c5a44a0b41f62914ce5b, type: 3}
   enemy: {fileID: 2365023716972002622}
+  firePoint: {fileID: 5661713602231185108}
+  bullet: {fileID: 6279364289080440706, guid: 5d5c883a016ae9b40a9d94f93e832978, type: 3}
+  fireRate: 2
+  bulletLimit: 5
+  canMove: 1
 --- !u!1001 &1956170726147841453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,5 +156,10 @@ PrefabInstance:
 --- !u!4 &5661713602624267591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6176621395190348010, guid: 0488a2904b5ecfd4e9b67dd83e366094, type: 3}
+  m_PrefabInstance: {fileID: 1956170726147841453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5661713602231185108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6176621396944483193, guid: 0488a2904b5ecfd4e9b67dd83e366094, type: 3}
   m_PrefabInstance: {fileID: 1956170726147841453}
   m_PrefabAsset: {fileID: 0}

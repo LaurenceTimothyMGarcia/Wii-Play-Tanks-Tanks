@@ -10,7 +10,7 @@ public class PlayerTopBehavior : MonoBehaviour
 
     public float fireRate;
     private float nextFireTime;
-    //public int bulletLimit;
+    public int bulletLimit;
 
     // Update is called once per frame
     void Update()
@@ -35,7 +35,7 @@ public class PlayerTopBehavior : MonoBehaviour
         //SHOOTING
         int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length; //counts number of bullets on screen
 
-        if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && numBullets <= 5) //&& numBullets < bulletLimit)
+        if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && numBullets <= bulletLimit) //&& numBullets < bulletLimit)
         {
             nextFireTime = Time.time + 1f/fireRate;
             Shoot();

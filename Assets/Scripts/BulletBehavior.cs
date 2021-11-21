@@ -17,7 +17,7 @@ public class BulletBehavior : MonoBehaviour
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit, Time.deltaTime * bulletSpeed + .05f)) {
-            if(hit.collider.gameObject.CompareTag("Breakable") || hit.collider.gameObject.CompareTag("Bullet"))
+            if(hit.collider.gameObject.CompareTag("Breakable") || hit.collider.gameObject.CompareTag("Bullet") || hit.collider.gameObject.CompareTag("Enemy") || hit.collider.gameObject.CompareTag("Player"))
             {
                 FindObjectOfType<AudioManager>().Play("BulletCollide");
                 Destroy(hit.collider.gameObject);
@@ -25,6 +25,7 @@ public class BulletBehavior : MonoBehaviour
             }
             if(ricochets == 0) {
                 Destroy(gameObject);
+                return;
             }
             FindObjectOfType<AudioManager>().Play("BulletReflect");
             Vector3 reflect = Vector3.Reflect(ray.direction, hit.normal);
