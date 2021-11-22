@@ -32,7 +32,6 @@ public class Mine : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         if (countdown <= 7f)
         {
             Explode();
