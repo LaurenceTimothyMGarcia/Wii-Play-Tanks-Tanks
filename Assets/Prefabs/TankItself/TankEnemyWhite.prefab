@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5947672614201924807}
   - component: {fileID: 3669530028937302353}
   - component: {fileID: 2237813918390157710}
+  - component: {fileID: 3747679698221805757}
   m_Layer: 7
   m_Name: TankEnemyWhite
   m_TagString: Enemy
@@ -88,6 +89,20 @@ MonoBehaviour:
   fireRate: 0.5
   bulletLimit: 5
   canMove: 1
+--- !u!114 &3747679698221805757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947672614201924806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4824f93acb6f647bfda2088872a28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invisTime: 5
+  revealTime: 1
 --- !u!1001 &5947672614692001971
 PrefabInstance:
   m_ObjectHideFlags: 0

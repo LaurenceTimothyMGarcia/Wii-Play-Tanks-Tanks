@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35af2ac12b8a75348b1af9f7702cdd9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPath: Assets/Levels/Level002.level
+  levelPath: Assets/Levels/Level020.level
   levelName: 
   mode: 
   startTopLeft: {x: -10, y: 0, z: 19}
@@ -2139,7 +2139,7 @@ GameObject:
   - component: {fileID: 1255165476}
   - component: {fileID: 1255165475}
   m_Layer: 5
-  m_Name: Resume
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
