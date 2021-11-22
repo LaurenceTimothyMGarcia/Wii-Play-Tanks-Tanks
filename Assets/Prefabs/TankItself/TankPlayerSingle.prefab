@@ -301,6 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06303573098d0bb4aab88769140abba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 3
   rotationSpeed: 200
   mine: {fileID: 2240351115433216374, guid: f02e2d9b2b1e0964bab75c9cb5640b97, type: 3}

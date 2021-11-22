@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class BulletBehavior : MonoBehaviour
 {
     public float bulletSpeed;
@@ -23,6 +24,14 @@ public class BulletBehavior : MonoBehaviour
                 Destroy(hit.collider.gameObject);
                 ricochets = 0;
             }
+
+            if (hit.collider.gameObject.CompareTag("Mine"))
+            {
+                FindObjectOfType<AudioManager>().Play("BulletCollide");
+                //Destroy(hit.collider.gameObject);
+                ricochets = 0;
+            }
+
             if(ricochets == 0) {
                 Destroy(gameObject);
                 return;

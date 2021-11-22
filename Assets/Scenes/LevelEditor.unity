@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43774444, g: 0.48563987, b: 0.56591654, a: 1}
+  m_IndirectSpecularColor: {r: 0.4377444, g: 0.48563945, b: 0.56591606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35af2ac12b8a75348b1af9f7702cdd9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPath: Assets/Levels/Level099.level
+  levelPath: Assets/Levels/Level002.level
   levelName: 
   mode: 
   startTopLeft: {x: -10, y: 0, z: 19}
@@ -1066,6 +1066,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BulletCollide
     clip: {fileID: 8300000, guid: 3f11764631a32fd44a75877eaf658fbb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MinePlant
+    clip: {fileID: 8300000, guid: 93e6436430cee514c92d7bf666a30bc5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MineBlowUp
+    clip: {fileID: 8300000, guid: 06fead5bb9e2d1c45a8d6d8bfaf931aa, type: 3}
     volume: 1
     pitch: 1
     loop: 0

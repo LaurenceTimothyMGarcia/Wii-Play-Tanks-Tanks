@@ -6,6 +6,7 @@ public class Mine : MonoBehaviour
 {
     public float delay = 10f;
     public float radius = 3f;
+    public GameObject explosion;
 
     float countdown;
     bool hasExploded = false;
@@ -13,6 +14,7 @@ public class Mine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("MinePlant");
         countdown = delay;
     }
 
@@ -30,10 +32,16 @@ public class Mine : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))
+        Debug.Log(other);
+        if (countdown <= 7f)
         {
             Explode();
         }
+        
+        /*if (other.CompareTag("Bullet"))
+        {
+            Explode();
+        }*/
     }
 
     void Explode()
@@ -41,6 +49,8 @@ public class Mine : MonoBehaviour
         //show effect
 
         Collider[] colliderMet = Physics.OverlapSphere(transform.position, radius);
+        FindObjectOfType<AudioManager>().Play("MineBlowUp");
+        AddExplosion();
 
         foreach(Collider collider in colliderMet)
         {
@@ -53,6 +63,12 @@ public class Mine : MonoBehaviour
         //delete them
 
         Destroy(gameObject);
+    }
+
+    void AddExplosion()
+    {
+        GameObject explode = Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(explode, 1f);
     }
 
     private void OnDrawGizmosSelected()

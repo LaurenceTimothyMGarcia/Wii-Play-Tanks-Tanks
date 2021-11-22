@@ -8,6 +8,7 @@ TagManager:
   - Block
   - Breakable
   - Enemy
+  - Mine
   layers:
   - Default
   - TransparentFX
