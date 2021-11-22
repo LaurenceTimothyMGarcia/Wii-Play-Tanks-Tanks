@@ -33,13 +33,16 @@ public class PlayerTopBehavior : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 100f * Time.deltaTime);
         }
         //SHOOTING
-        int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length; //counts number of bullets on screen
-
-        if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && numBullets <= bulletLimit) //&& numBullets < bulletLimit)
+        if (!PauseMenu.isPaused)
         {
-            nextFireTime = Time.time + 1f/fireRate;
-            Shoot();
-            FindObjectOfType<AudioManager>().Play("TankShoot");
+            int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length; //counts number of bullets on screen
+
+            if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && numBullets <= bulletLimit) //&& numBullets < bulletLimit)
+            {
+                nextFireTime = Time.time + 1f/fireRate;
+                Shoot();
+                FindObjectOfType<AudioManager>().Play("TankShoot");
+            }
         }
     }
 
