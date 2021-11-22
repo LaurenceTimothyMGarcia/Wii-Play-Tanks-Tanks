@@ -33,7 +33,6 @@ public class PlayerTopBehavior : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 100f * Time.deltaTime);
         }
 
-        Debug.Log(PauseMenu.isPaused);
         //SHOOTING
         if (!PauseMenu.isPaused)
         {
