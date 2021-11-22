@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     public float delay = 10f;
-    public float radius = 2f;
+    public float radius = 3f;
 
     float countdown;
     bool hasExploded = false;
