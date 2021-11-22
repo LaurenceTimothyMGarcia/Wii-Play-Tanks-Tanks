@@ -276,4 +276,106 @@ public class LevelSelectMenu : MonoBehaviour
         LevelReader.levelPath = "Assets/Levels/Level040.level";
         SceneManager.LoadScene("LevelEditor");
     }
+
+    public void Level041()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level041.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level042()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level042.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level043()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level043.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level044()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level044.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level045()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level045.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level046()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level046.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level047()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level047.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level048()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level048.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level049()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level049.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level050()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level050.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+
+    public void Level051()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level051.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level052()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level052.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level053()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level053.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level054()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level054.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level055()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level055.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level056()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level056.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level057()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level057.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level058()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level058.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level059()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level059.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
+    public void Level060()
+    {
+        LevelReader.levelPath = "Assets/Levels/Level060.level";
+        SceneManager.LoadScene("LevelEditor");
+    }
 }
