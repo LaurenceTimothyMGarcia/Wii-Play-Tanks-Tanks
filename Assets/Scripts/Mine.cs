@@ -37,11 +37,6 @@ public class Mine : MonoBehaviour
         {
             Explode();
         }
-        
-        /*if (other.CompareTag("Bullet"))
-        {
-            Explode();
-        }*/
     }
 
     void Explode()
