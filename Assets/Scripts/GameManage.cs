@@ -13,7 +13,7 @@ public class GameManage : MonoBehaviour
     void Awake()
     {
         //paused = true;
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     // Update is called once per frame
@@ -21,10 +21,10 @@ public class GameManage : MonoBehaviour
     {
         //beforeStartTime -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             //paused = false;
             Time.timeScale = 1f;
-        }
+        }*/
     }
 }

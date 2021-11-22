@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour
     void Awake()
     {
         nextFireTime = 2f;
-        canShoot = false;
+        canShoot = false;//trying to fix issue where it shoots right as the scene is loaded
     }
 
     void Start()
