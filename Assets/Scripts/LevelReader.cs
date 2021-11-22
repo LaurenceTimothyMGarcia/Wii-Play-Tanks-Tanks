@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LevelReader : MonoBehaviour
 {
-    public string levelPath;
+    public static string levelPath;
     public string levelName;
     public string mode;
     public Vector3 startTopLeft;
