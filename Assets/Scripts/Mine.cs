@@ -32,7 +32,7 @@ public class Mine : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (countdown <= 1f)
+        if (countdown <= 9f)
         {
             Explode();
         }
