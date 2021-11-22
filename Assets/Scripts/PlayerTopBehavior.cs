@@ -34,7 +34,7 @@ public class PlayerTopBehavior : MonoBehaviour
         }
 
         //SHOOTING
-        if (!PauseMenu.isPaused)
+        if (!PauseMenu.isPaused && !LoseScreen.lost)
         {
             int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length; //counts number of bullets on screen
 

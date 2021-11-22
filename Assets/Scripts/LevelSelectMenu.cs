@@ -11,18 +11,6 @@ public class LevelSelectMenu : MonoBehaviour
     public GameObject level6180;
     public GameObject level9110;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Level0120()
     {
         level0120.SetActive(true);
