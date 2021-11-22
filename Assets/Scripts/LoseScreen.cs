@@ -39,16 +39,16 @@ public class LoseScreen : MonoBehaviour
         lost = false;
         Time.timeScale = 1f;
         LevelReader.levelPath = LevelReader.levelPath;
-        SceneManager.LoadScene("LevelEditor");
         loseMenu.SetActive(false);
+        SceneManager.LoadScene("LevelEditor");
     }
 
     public void GoToMainMenu()
     {
         lost = false;
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
         loseMenu.SetActive(false);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

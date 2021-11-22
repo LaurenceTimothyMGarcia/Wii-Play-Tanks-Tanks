@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class LevelReader : MonoBehaviour
 {
+    //added this to test something - larry
+    public static string filePath = "Assets/Levels/Level";
+    public static int levelNumber;
     public static string levelPath;
     public string levelName;
     public string mode;

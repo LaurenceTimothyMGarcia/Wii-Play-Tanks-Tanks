@@ -36,7 +36,7 @@ public class GameManage : MonoBehaviour
 
         if (enemyNum <= 0)
         {
-
+            WinLevel.win = true;
         }
 
         Debug.Log(playerNum);
