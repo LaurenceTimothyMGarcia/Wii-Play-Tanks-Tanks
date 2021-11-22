@@ -303,3 +303,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   rotationSpeed: 200
+  mine: {fileID: 2240351115433216374, guid: f02e2d9b2b1e0964bab75c9cb5640b97, type: 3}
