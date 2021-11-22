@@ -12,12 +12,19 @@ public class EnemyAI : MonoBehaviour
     public GameObject bullet;
 
     public float fireRate;
-    private float nextFireTime = 2;
+    private float nextFireTime;
     public int bulletLimit;
+    bool canShoot;
 
     public bool canMove = true;
 
     Vector3 velocity = Vector3.zero;
+
+    void Awake()
+    {
+        nextFireTime = 2f;
+        canShoot = false;
+    }
 
     void Start()
     {
@@ -49,6 +56,11 @@ public class EnemyAI : MonoBehaviour
 
         if (Time.time >= nextFireTime && numBullets <= bulletLimit)
         {
+            if (!canShoot)
+            {
+                canShoot = true;
+                return;
+            }
             nextFireTime = Time.time + 1f/fireRate;
             Shoot();
             FindObjectOfType<AudioManager>().Play("TankShoot");
