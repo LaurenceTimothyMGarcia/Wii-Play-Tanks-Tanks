@@ -21,6 +21,10 @@ public class LoseScreen : MonoBehaviour
         {
             YouLose();
         }
+        else
+        {
+            loseMenu.SetActive(false);
+        }
     }
 
     public void YouLose()
@@ -32,8 +36,8 @@ public class LoseScreen : MonoBehaviour
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
         lost = false;
+        Time.timeScale = 1f;
         LevelReader.levelPath = LevelReader.levelPath;
         SceneManager.LoadScene("LevelEditor");
         loseMenu.SetActive(false);
@@ -41,9 +45,9 @@ public class LoseScreen : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        lost = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-        lost = false;
         loseMenu.SetActive(false);
     }
 
