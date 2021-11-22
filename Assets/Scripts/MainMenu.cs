@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void LevelSelect()
     {
-
+        SceneManager.LoadScene("LevelSelectScreen");
     }
 
     public void TitleMenu()
