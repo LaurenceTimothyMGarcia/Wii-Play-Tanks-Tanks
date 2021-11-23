@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e4a2a913ca4f974299550203a87f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 10
+  bulletSpeed: 15
   ricochets: 0
 --- !u!135 &3346724774911013474
 SphereCollider:
