@@ -55,9 +55,9 @@ public class LevelReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        filePath = Application.dataPath + "/Resources/Levels/" + levelNumber;
+        filePath = System.IO.Directory.GetCurrentDirectory() + "\\Resources\\Levels\\" + levelNumber;
         levelPath = filePath;
-        Debug.Log(levelPath);
+        Debug.Log(filePath);
         BuildLevel(levelPath);
         //ClearLevel();
     }
