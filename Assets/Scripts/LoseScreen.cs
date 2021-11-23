@@ -8,12 +8,6 @@ public class LoseScreen : MonoBehaviour
     public GameObject loseMenu;
     public static bool lost;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -38,7 +32,6 @@ public class LoseScreen : MonoBehaviour
     {
         lost = false;
         Time.timeScale = 1f;
-        LevelReader.levelPath = LevelReader.levelPath;
         loseMenu.SetActive(false);
         SceneManager.LoadScene("LevelEditor");
     }

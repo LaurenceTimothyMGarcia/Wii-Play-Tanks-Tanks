@@ -13,19 +13,10 @@ public class GameManage : MonoBehaviour
     int enemyNum;
     int playerNum;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        //paused = true;
-        //Time.timeScale = 0f;
-
-
-    }
 
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("RoundStart");
-        
     }
 
     // Update is called once per frame
