@@ -57,7 +57,9 @@ public class LevelReader : MonoBehaviour
     {
         filePath = Application.streamingAssetsPath + "/" + levelNumber;
         levelPath = filePath;
-        Debug.Log(filePath);
+        Debug.Log("Level reader level number " + levelNumber);
+        Debug.Log("Level reader file path " + filePath);
+        Debug.Log("Level reader level path " + levelPath);
         BuildLevel(levelPath);
         //ClearLevel();
     }

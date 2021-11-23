@@ -42,19 +42,19 @@ public class WinLevel : MonoBehaviour
 
         //AVAST, ALL WHO HOPED THAT I WOULDN'T USE REGEX
         Regex getLevelNumber = new Regex(@"\d{3}");
-        Match levelNameNumbers = getLevelNumber.Match(LevelReader.levelPath);
+        Match levelNameNumbers = getLevelNumber.Match(LevelReader.levelNumber);
         if (levelNameNumbers.Success)
         {
             int parseLevelMatch = int.Parse(levelNameNumbers.Value);
             parseLevelMatch++;
             string levelNumberString = parseLevelMatch.ToString();
-            LevelReader.levelPath = "Assets/Levels/Level";
+            LevelReader.levelNumber = "Level";
             for (int i = 0; i < 3 - levelNumberString.Length; i++)
             {
-                LevelReader.levelPath = string.Concat(LevelReader.levelPath, "0");
+                LevelReader.levelNumber = string.Concat(LevelReader.levelNumber, "0");
             }
-            LevelReader.levelPath = string.Concat(LevelReader.levelPath, parseLevelMatch.ToString() + ".level");
-            Debug.Log(LevelReader.levelPath);
+            LevelReader.levelNumber = string.Concat(LevelReader.levelNumber, parseLevelMatch.ToString() + ".level");
+            Debug.Log("Win level filepath " + LevelReader.levelNumber);
         }
         else
         {
