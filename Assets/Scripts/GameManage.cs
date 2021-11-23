@@ -39,6 +39,7 @@ public class GameManage : MonoBehaviour
             WinLevel.win = true;
         }
 
+        if (Time.frameCount % 500 == 0)
         Debug.Log(playerNum);
         if (playerNum <= 0)
         {

@@ -105,7 +105,7 @@ public class LevelReader : MonoBehaviour
             cameraS = float.Parse(levelReader.ReadLine());
         }
         catch{
-            Debug.LogError("Failed to read camera data.");
+            Debug.Log("No camera data found.");
         }
         Vector3 newCamPos = new Vector3(cameraX, cameraY, cameraZ);
         try { //If data is found, set the camera accordingly
