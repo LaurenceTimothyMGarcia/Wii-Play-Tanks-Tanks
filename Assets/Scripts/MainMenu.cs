@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void MainGame()
     {
+        LevelReader.levelPath = "Assets/Levels/Level001.level";
         SceneManager.LoadScene("LevelEditor");
     }
 
