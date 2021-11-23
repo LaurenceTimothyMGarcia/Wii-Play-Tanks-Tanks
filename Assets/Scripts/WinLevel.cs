@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +8,6 @@ public class WinLevel : MonoBehaviour
 {
     public GameObject winMenu;
     public static bool win;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -38,7 +33,27 @@ public class WinLevel : MonoBehaviour
     {
         win = false;
         Time.timeScale = 1f;
-        LevelReader.levelPath = LevelReader.levelPath;
+
+        //AVAST, ALL WHO HOPED THAT I WOULDN'T USE REGEX
+        Regex getLevelNumber = new Regex(@"\d{3}");
+        Match levelNameNumbers = getLevelNumber.Match(LevelReader.levelPath);
+        if (levelNameNumbers.Success)
+        {
+            int parseLevelMatch = int.Parse(levelNameNumbers.Value);
+            parseLevelMatch++;
+            string levelNumberString = parseLevelMatch.ToString();
+            LevelReader.levelPath = "Assets/Levels/Level";
+            for (int i = 0; i < 3 - levelNumberString.Length; i++)
+            {
+                LevelReader.levelPath = string.Concat(LevelReader.levelPath, "0");
+            }
+            LevelReader.levelPath = string.Concat(LevelReader.levelPath, parseLevelMatch.ToString() + ".level");
+            Debug.Log(LevelReader.levelPath);
+        }
+        else
+        {
+            GoToMainMenu();
+        }
         winMenu.SetActive(false);
         SceneManager.LoadScene("LevelEditor");
     }
