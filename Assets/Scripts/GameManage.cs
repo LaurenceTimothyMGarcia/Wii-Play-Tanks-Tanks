@@ -7,22 +7,28 @@ public class GameManage : MonoBehaviour
 {
     public float beforeStartTime = 60f;
 
-    bool paused = true;
+    float musicStart = 2f;
+
+    bool once = true;
     int enemyNum;
     int playerNum;
 
-    // Start is called before the first frame update
-    void Awake()
+
+    void Start()
     {
-        //paused = true;
-        //Time.timeScale = 0f;
-
-
+        FindObjectOfType<AudioManager>().Play("RoundStart");
     }
 
     // Update is called once per frame
     void Update()
     {
+        musicStart -= Time.deltaTime;
+        if (musicStart <= 0 && once)
+        {
+            FindObjectOfType<AudioManager>().Play("Theme1");
+            once = false;
+        }
+
         //beforeStartTime -= Time.deltaTime;
 
         /*if (Input.GetKeyDown(KeyCode.E))
@@ -36,12 +42,15 @@ public class GameManage : MonoBehaviour
 
         if (enemyNum <= 0)
         {
+            FindObjectOfType<AudioManager>().Play("RoundEnd");
             WinLevel.win = true;
         }
 
-        Debug.Log(playerNum);
+        //if (Time.frameCount % 500 == 0)
+        //Debug.Log(playerNum);
         if (playerNum <= 0)
         {
+            FindObjectOfType<AudioManager>().Play("RoundFail");
             LoseScreen.lost = true;
         }
     }
