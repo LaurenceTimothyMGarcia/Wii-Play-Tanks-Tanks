@@ -8,8 +8,8 @@ public class LevelReader : MonoBehaviour
 {
     //added this to test something - larry
     public static string filePath = "Assets/Levels/Level";
-    public static int levelNumber;
-    public static string levelPath = "Assets/Levels/Level001.level";
+    public static string levelNumber = "Level001.level";
+    public static string levelPath;
     public string levelName;
     public string mode;
     public Vector3 startTopLeft;
@@ -55,6 +55,8 @@ public class LevelReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levelPath = Application.dataPath + "/Levels/" + levelNumber;
+        Debug.Log(levelPath);
         BuildLevel(levelPath);
         //ClearLevel();
     }

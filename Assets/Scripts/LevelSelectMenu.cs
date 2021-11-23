@@ -63,12 +63,12 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void Level001()
     {
-        LevelReader.levelPath = "Assets/Levels/Level001.level";
+        LevelReader.levelNumber = "Level001.level";
         SceneManager.LoadScene("LevelEditor");
     }
     public void Level002()
     {
-        LevelReader.levelPath = "Assets/Levels/Level002.level";
+        LevelReader.levelNumber = "Level002.level";
         SceneManager.LoadScene("LevelEditor");
     }
     public void Level003()
