@@ -7,7 +7,7 @@ using UnityEngine;
 public class LevelReader : MonoBehaviour
 {
     //added this to test something - larry
-    public static string filePath = "Assets/Levels/Level";
+    public static string filePath;
     public static string levelNumber = "Level001.level";
     public static string levelPath;
     public string levelName;
@@ -55,7 +55,8 @@ public class LevelReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelPath = Application.dataPath + "/Levels/" + levelNumber;
+        filePath = Application.dataPath + levelNumber;
+        levelPath = filePath;
         Debug.Log(levelPath);
         BuildLevel(levelPath);
         //ClearLevel();
