@@ -8,6 +8,12 @@ public class LoseScreen : MonoBehaviour
     public GameObject loseMenu;
     public static bool lost;
 
+    void Start()
+    {
+        lost = false;
+        Time.timeScale = 1f;
+    }
+
     // Update is called once per frame
     void Update()
     {
