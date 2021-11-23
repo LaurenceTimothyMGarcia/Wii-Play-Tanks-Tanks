@@ -281,7 +281,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8430200801697777336, guid: 8d9b384f3613c5a44a0b41f62914ce5b, type: 3}
-  firePoint: {fileID: 6176621396944483193}
-  bullet: {fileID: 6279364289080440706, guid: 92db1d34a52f0eb4f8e2f78c4255ef85, type: 3}
   bottomTank: {fileID: 6446530952373210683}
-  fireRate: 1
