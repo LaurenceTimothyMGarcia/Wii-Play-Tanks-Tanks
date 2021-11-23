@@ -1,0 +1,24 @@
+Code names for what parts make up the walls
+Each wall goes from bottom up
+
+(Color)(Type of Block)
+
+Color
+Ph = Peach
+Pk = Pink
+Br = Brown
+Dk = Dark
+Bk = Breakable
+
+Type of Block
+Cb = Cube
+Hf = Half Cube
+Tr = Triangular Prisim
+Sm = Small Cube
+Sc = SemiCircle Prisim
+Rt = Rectangular Prisim
+
+Example
+DkRt = Dark Rectangular Prisim
+BkHf = Breakable Half Cube
+BkHfBkCb = Breakable Half Cube with Breakable Cube on top

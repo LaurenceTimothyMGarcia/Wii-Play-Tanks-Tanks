@@ -1,0 +1,41 @@
+Each level is (for now) 22 tiles wide and 16 tiles vertically
+levels are represented as such in .level files, where each row is separated by a line break
+each tile is 2 characters long to define it
+
+Level Name
+Level Mode (Singleplayer, MultiplayerCoOp, or MultiplayerVersus)
+Width
+Height
+Tile Data (refer to tile name guide for specific tiles)
+Custom Camera X Position
+Custom Camera Y Position
+Custom Camera Z Position
+Custom Camera Size
+
+Tile Name Guide
+00 = ground
+-1 = hole
+1x = wall, type x
+	0 = small
+	1 = medium
+	2 = tall
+	3 = corner up left
+	4 = corner up right
+	5 = corner down left
+	6 = corner down right
+NOTE: Corner refers to the point at which the x and y of the right triangle meet. Example: Corner down right = x goes into the negative, & y the positive
+2x = destructible wall, type x
+	0 = normal
+sp = singleplayer tank, only 1
+mx = multiplayer tank, x = 0 for first player, 1 for second
+ex = enemy tank, type x
+	0 = brown
+	1 = grey
+	2 = turq
+	3 = yellow
+	4 = teal
+	5 = green
+	6 = purple
+	7 = white
+	8 = black
+	9 = thomas
