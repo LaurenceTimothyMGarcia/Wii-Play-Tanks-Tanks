@@ -5,8 +5,13 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    public bool enemyCount;
+    public bool scoreCount;
+
     int enemyNum;
+    public static int score;
     public Text enemyLeftText;
+    public Text textScore;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +22,16 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyNum = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (enemyCount)
+        {
+            enemyNum = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            enemyLeftText.text = "Enemies Left: " + (enemyNum/2);
+        }
 
-        enemyLeftText.text = "Enemies Left: " + (enemyNum/2);
+        if(scoreCount)
+        {
+            score = 10;
+            textScore.text = "Score: " + score;
+        }
     }
 }
