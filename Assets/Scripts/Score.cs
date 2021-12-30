@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     public bool scoreCount;
 
     int enemyNum;
-    public static int score;
+    public static int score = 0;
     public Text enemyLeftText;
     public Text textScore;
 
@@ -30,7 +30,6 @@ public class Score : MonoBehaviour
 
         if(scoreCount)
         {
-            score = 10;
             textScore.text = "Score: " + score;
         }
     }

@@ -6,6 +6,9 @@ public class BulletBehavior : MonoBehaviour
 {
     public float bulletSpeed;
     public int ricochets;
+
+    public static bool didReflect;
+
     Vector3 lastVelocity;
     Vector3 movementDir;
 
@@ -22,6 +25,17 @@ public class BulletBehavior : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("BulletCollide");
                 Destroy(hit.collider.gameObject);
+
+                if(didReflect && hit.collider.gameObject.CompareTag("Enemy"))
+                {
+                    Score.score += 200;
+                    Debug.Log("Refelct and kill");
+                }
+                else if(hit.collider.gameObject.CompareTag("Enemy"))
+                {
+                    Score.score += 100;
+                    Debug.Log("only kill");
+                }
                 ricochets = 0;
             }
 
@@ -33,14 +47,18 @@ public class BulletBehavior : MonoBehaviour
             }
 
             if(ricochets == 0) {
+                didReflect = false;
                 Destroy(gameObject);
                 return;
             }
+
+            //Actual reflect
             FindObjectOfType<AudioManager>().Play("BulletReflect");
             Vector3 reflect = Vector3.Reflect(ray.direction, hit.normal);
             float rot = 90 - Mathf.Atan2(reflect.z, reflect.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, rot, 0);
             ricochets--;
+            didReflect = true;
         }
 
         //Destroy(gameObject, 3f);
