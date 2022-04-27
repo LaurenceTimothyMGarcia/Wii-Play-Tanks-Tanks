@@ -7,7 +7,7 @@ public class BulletBehavior : MonoBehaviour
     public float bulletSpeed;
     public int ricochets;
 
-    public static bool didReflect;
+    public static bool didReflect;  //Checks if bullet reflected or not
 
     Vector3 lastVelocity;
     Vector3 movementDir;
@@ -15,17 +15,20 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Bullet moves to this speed
         transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
         
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit, Time.deltaTime * bulletSpeed + .05f)) {
+            //This initial if statement is to check if the bullet can destroy the object
             if(hit.collider.gameObject.CompareTag("Breakable") || hit.collider.gameObject.CompareTag("Bullet") || hit.collider.gameObject.CompareTag("Enemy") || hit.collider.gameObject.CompareTag("Player"))
             {
                 FindObjectOfType<AudioManager>().Play("BulletCollide");
                 Destroy(hit.collider.gameObject);
 
+                //Adds score to player, checks for reflect kill
                 if(didReflect && hit.collider.gameObject.CompareTag("Enemy"))
                 {
                     Score.score += 200;
@@ -39,6 +42,7 @@ public class BulletBehavior : MonoBehaviour
                 ricochets = 0;
             }
 
+            //Blows up mine
             if (hit.collider.gameObject.CompareTag("Mine"))
             {
                 FindObjectOfType<AudioManager>().Play("BulletCollide");
@@ -63,36 +67,4 @@ public class BulletBehavior : MonoBehaviour
 
         //Destroy(gameObject, 3f);
     }
-
-    //This entire on collision portion does not work
-    //Bullets still ricochets without it
-    /*void OnCollisionEnter(Collision coll)
-    {
-        if (coll.gameObject.CompareTag("Breakable"))
-        {
-            Debug.Log("Hit");
-            Destroy(coll.gameObject, 0f);
-            Destroy(gameObject, 0f);
-        }
-
-        if (coll.gameObject.CompareTag("Block") && ricochets > 0)
-        {
-            Debug.Log(ricochets);
-            
-            bulletSpeed = lastVelocity.magnitude;
-            movementDir = Vector3.Reflect(lastVelocity.normalized, coll.contacts[0].normal);
-
-            //Vector3 wallNormal = coll.contacts[0].normal;
-            //movementDir = Vector3.Reflect(rb.velocity, wallNormal).normalized;
-
-            //rb.velocity = movementDir * bulletSpeed;
-
-            ricochets--;
-        }
-
-        if (coll.gameObject.CompareTag("Block") && ricochets <= 0)
-        {
-            Destroy(gameObject, 0f);
-        }
-    }*/
 }

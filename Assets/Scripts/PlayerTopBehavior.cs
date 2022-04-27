@@ -16,7 +16,7 @@ public class PlayerTopBehavior : MonoBehaviour
     void Update()
     {
         Plane playerPlane = new Plane(Vector3.up, transform.position);
-        Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);    //This is how the tank head follows and tracks the mouse rotation
         float hitDist = 0.0f;
 
         //Transform movement = transform.GetComponentInParent<Transform>;
@@ -38,7 +38,8 @@ public class PlayerTopBehavior : MonoBehaviour
         {
             int numBullets = GameObject.FindGameObjectsWithTag("Bullet").Length; //counts number of bullets on screen
 
-            if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && numBullets <= bulletLimit) //&& numBullets < bulletLimit)
+            //Click mouse to shoot bullet
+            if(Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && numBullets <= bulletLimit)
             {
                 nextFireTime = Time.time + 1f/fireRate;
                 Shoot();
@@ -47,6 +48,8 @@ public class PlayerTopBehavior : MonoBehaviour
         }
     }
 
+
+    //Creates bullet
     void Shoot(){
         Instantiate(bullet.transform, firePoint.transform.position, firePoint.transform.rotation);
     }
